@@ -1,0 +1,10 @@
+data;
+
+param budget = 10000;
+param land = 10000;
+
+param: TYPES: profit cost size demand :=
+       APARTM   585    86  861   12
+       SHOUSE   515   240  600   20
+       LHOUSE   825   295 1200   20  
+       MAINSN  1000   500 2000    5 ;
