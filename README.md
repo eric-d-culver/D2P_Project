@@ -8,4 +8,5 @@ on the [UCDenver Optimization Wiki](http://math.ucdenver.edu/~sborgwardt/wiki/in
 * housing_dist.run - AMPL script which solves housing distribution problem for various values of land and budget, then outputs results to housing_dist.txt
 * housing_dist.txt - tab seperated file output from housing_dist.run
 * D2P_Poster.pdf - PDF of poster
+* D2P_abstract.pdf - PDF of abstract
 * README.md - this file
