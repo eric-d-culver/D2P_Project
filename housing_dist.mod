@@ -8,7 +8,7 @@ param cost {TYPES} >= 0;
 param size {TYPES} >= 0;
 param demand {TYPES} >= 0;
 
-var build {t in TYPES} >= 0, <= demand[t];
+var build {t in TYPES} >= 0, <= demand[t]; # how much of each type to build
 
 maximize Total_Profit:
    sum {t in TYPES} profit[t]*build[t];

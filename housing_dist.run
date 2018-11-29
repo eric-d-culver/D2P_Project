@@ -1,20 +1,24 @@
+# preliminary set up of problem and solver
 model housing_dist.mod;
 data housing_dist.dat;
 option solver cplex;
-option solver_msg 0;
+option solver_msg 0; # still (annoyingly) produces the "CPLEX 0.0.0" message
 
-set LAND;
-set BUDGET;
-param distribution {TYPES, LAND, BUDGET};
+set LAND; 
+set BUDGET; 
+# originally stored solution here, and displayed it, but it was ugly
+#param distribution {TYPES, LAND, BUDGET};
 
-let LAND := 10000 .. 50000 by 5000;
-let BUDGET := 500 .. 20000 by 500;
+let LAND := 10000 .. 50000 by 5000; # set of available land values
+let BUDGET := 500 .. 20000 by 500; # set of available budget values
 
+# header line for tab seperated file
 printf "land\tbudget\tapartments\tlarge_house\tmansion\tsmall_house\n" >housing_dist.txt;
 
 for {l in LAND, b in BUDGET} {
 	let land := l;
 	let budget := b;
 	solve;
+	# output solution to tab seperated file
 	printf "%i\t%i\t%.5f\t%.5f\t%.5f\t%.5f\n", land, budget, build["APARTM"], build["LHOUSE"], build["MAINSN"], build["SHOUSE"] >housing_dist.txt;	
 }

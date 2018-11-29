@@ -1,8 +1,10 @@
 data;
 
-param budget = 10000;
+param budget = 10000; # these parameters will vary
 param land = 10000;
 
+# real-world data (see poster for sources)
+# except demand on mansions, which I made up
 param: TYPES: profit cost size demand :=
        APARTM   585    86  861   12
        SHOUSE   515   240  600   20
